@@ -13,7 +13,6 @@ public class Endereco {
     @Column(name = "ID_ENDERECO")
     private Long id;
 
-
     @Size(max = 8)
     @Column(name = "CEP")
     private String cep;
@@ -28,20 +27,18 @@ public class Endereco {
     @Column(name = "CIDADE")
     private String cidade;
 
-
     @Size(max = 255)
     @Column(name = "RUA")
     private String rua;
-
 
     @Size(max = 255)
     @Column(name = "BAIRRO")
     private String bairro;
 
-
     @Column(name = "NUMERO")
     private Integer numero;
 
+    public Endereco() {}
 
     public Endereco(String cep, String estado, String cidade, String rua, String bairro, Integer numero) {
         this.cep = cep;
