@@ -6,6 +6,7 @@ import com.f3pro.sgci.model.Pessoa;
 import com.f3pro.sgci.schema.PessoaReq;
 import com.f3pro.sgci.schema.PessoaResponse;
 import com.f3pro.sgci.schema.PessoaUpd;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+@Tag(name = "Pessoa")
 @RestController
 @RequestMapping("pessoas")
 public class PessoaController {
