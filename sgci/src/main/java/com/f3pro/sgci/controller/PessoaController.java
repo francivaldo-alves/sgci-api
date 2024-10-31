@@ -3,9 +3,7 @@ package com.f3pro.sgci.controller;
 
 import com.f3pro.sgci.manager.PessoaManager;
 import com.f3pro.sgci.model.Pessoa;
-import com.f3pro.sgci.schema.PessoaReq;
-import com.f3pro.sgci.schema.PessoaResponse;
-import com.f3pro.sgci.schema.PessoaUpd;
+import com.f3pro.sgci.schema.*;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -40,8 +38,8 @@ public class PessoaController {
     }
 
     @GetMapping
-    public ResponseEntity<List<PessoaResponse>> findAll() {
-        return ResponseEntity.ok(pessoaManager.findAll());
+    public ResponseEntity<ResponsePagedCommom<PessoaResponse>> findAll(@Valid PessoaFilter filtros ) {
+        return ResponseEntity.ok(pessoaManager.findAll(filtros));
     }
     @GetMapping("{idPessoa}")
     public ResponseEntity<PessoaResponse> findById(@PathVariable (required = true) Long idPessoa){
