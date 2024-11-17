@@ -4,6 +4,7 @@ import jakarta.validation.constraints.NotNull;
 
 public record EnderecoResponse(
 
+        Long id,
         String cep,
         String estado,
         String cidade,

@@ -5,6 +5,8 @@ import com.f3pro.sgci.model.TipoPessoaEnum;
 import jakarta.validation.constraints.NotNull;
 
 public record PessoaResponse(
+
+        Long id,
         String nome,
         EnderecoResponse endereco,
         TipoPessoaEnum tipo,
